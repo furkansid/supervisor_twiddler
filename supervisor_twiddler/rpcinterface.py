@@ -68,6 +68,10 @@ class TwiddlerNamespaceRPCInterface:
 
         self.supervisord.options.logger.log(level, message)
         return True
+    
+    def removeProgram(self, group_name):
+        group = self._getProcessGroup(group_name)
+        return
 
     def addProgramToGroup(self, group_name, program_name, program_options):
         """ Add a new program to an existing process group.  Depending on the
